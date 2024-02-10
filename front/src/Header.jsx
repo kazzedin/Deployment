@@ -1,6 +1,7 @@
 import React,{useState,createContext} from 'react'
 import axios from 'axios';
 import Body from './Body.jsx'
+require('dotenv').config();
 
 export const EmployerContext=createContext(null) // ici on a utiliser createContext pour pouvoire passer des information utile a d'autre components dans ce cas on a passer pour Body
 
@@ -15,7 +16,7 @@ const [DetailsEmployer,setDetailsEmployer]=useState([]);// state pour sauvgarder
 const Handelbt = (e) => {
   e.preventDefault();
   setSelectedEmployer(false);
-  axios.get('http://localhost:3001/employer')//get request
+  axios.get(process.env.BACKEND_URL+'/employer')//get request
   .then((res) => {
     console.log(res)
     setEmployer(res.data);
@@ -28,7 +29,7 @@ const Handelbt = (e) => {
  // dans le cas de choisir un employer parmi la liste des employer  pour choisir un employer specifique 
   const HandelEmployer=(id)=>{
     setSelectedEmployer(true)
-    axios.get(`http://localhost:3001/employer/${id}`)
+    axios.get(process.env.BACKEND_URL+`/employer/${id}`)
     .then(res=>{
       console.log(res)
     setDetailsEmployer(res.data)
