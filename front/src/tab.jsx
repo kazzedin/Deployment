@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-require('dotenv').config();
+
 
 export default function Tab(props) {
 

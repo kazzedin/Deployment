@@ -1,7 +1,7 @@
 import React,{useState,createContext} from 'react'
 import axios from 'axios';
 import Body from './Body.jsx'
-require('dotenv').config();
+
 
 export const EmployerContext=createContext(null) // ici on a utiliser createContext pour pouvoire passer des information utile a d'autre components dans ce cas on a passer pour Body
 
