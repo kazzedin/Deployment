@@ -8,6 +8,13 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public', {
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.js')) {
+        res.setHeader('Content-Type', 'text/javascript');
+      }
+    }
+  }));
 
 
 
