@@ -9,15 +9,20 @@ require('dotenv').config();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(process.env.MONGO_URL) //PetroMag cest le nom de la base de donner
 
-mongoose.connection.on('connected', () => {
+
+mongoose.connect("mongodb+srv://kazzedin29:kazzedin29@cluster0.xhxianp.mongodb.net/PetroMag?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
     console.log('Connected to MongoDB');
-});
+  })
+  .catch((err) => {
+    console.error('MongoDB connection error:', err);
+  });
 
 mongoose.connection.on('error', (err) => {
-    console.error('MongoDB connection error:', err);
+  console.error('MongoDB connection error:', err);
 });
+
 
 app.get('/', (req, res) => {
     res.send("hello world");
