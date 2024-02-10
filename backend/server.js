@@ -7,7 +7,12 @@ const { resModel } = require('./db/resultDb.js');
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:['https://client-side-site.onrender.com/'],
+  methods:['GET', 'POST'],
+  credentials:true,
+
+}));
 app.use(express.static('public', {
     setHeaders: (res, path, stat) => {
       if (path.endsWith('.js')) {
