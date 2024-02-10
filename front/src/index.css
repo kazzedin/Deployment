@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.header {
+    display: flex;
+    justify-content: flex-end; 
+    width: 16rem;
+    margin-left: 80rem;
+    z-index: 1;
+    position: absolute;
+    margin-top: 2rem;
+  }
+  
+.employer {
+    position: relative; /* Position relative pour positionner le bouton par rapport à ce conteneur */
+  }
+
+.bt_affichage {
+  background-color: #007bff; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  cursor: pointer; 
+  margin: 1rem;
+  border-radius: 18px;
+  margin-left: 2rem;
+}
+.bt_affichage:hover{
+    background-color: #439eff; 
+}
+
+.selected_emp {
+    padding: 9px;
+    border-bottom: 1px solid black; 
+    cursor: pointer;
+  }
+.selected_emp:hover{
+    background-color: rgba(96, 215, 255, 0.638);
+}
+.container{
+    background-color: #f9f9f9; 
+    gap: 0.3rem;
+    display: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    right: 0;
+    margin-right: 2rem;
+    font-weight: bold;
+    height:10rem;
+    padding: 10px;
+    overflow-y:scroll;
+    z-index: 1;
+    
+}
+.dis_container{
+    display: none;
+}
+
+.body{
+    display: flex;
+    border:2px solid black;
+    justify-content: center;
+    
+   
+}
+.cadre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 3rem;
+    z-index:0;
+
+}
+
+.Inputs {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 7rem; 
+  }
+  
+label,input {
+    margin-bottom: 8px; 
+    font-weight: bolder;
+  }
+  
+.colone-gauche {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+  
+.colone-droit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.tab, .tab2 {
+    width: 50%;
+    border-collapse: collapse;
+  }
+  
+.tab th, .tab td,.tab2 th , .tab2 td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: left;
+  }
+  
+.tab th , .tab2 th {
+    background-color: #f2f2f2;
+  }
+.tableau {
+    height: 100rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+} 
+.inptab{
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.inpObserv{
+    border: none;
+    height: 1.3rem;
+    font-weight: bolder;
+}
+
+.info-sup{
+    width: 80rem;
+    margin-left: 4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+.date{
+    width: 30%;
+
+}
+.obs{
+    width: 70%;
+}
+.inp-dte{
+    width: 12rem;
+    height: 1.2rem;
+    border: none;
+    font-weight: bolder;
+}
+.inp-obs{
+    width: 30rem;
+    height: 2rem;
+    border:none;
+    font-weight: bolder;
+}
+.info-input{
+    text-indent: 1rem;
+    width: 14rem;
+}
+.tab-obs{
+    margin-left: 2rem;
+}
+.inp-sup{
+    height: 1.6rem;
+    width: 8rem;
+}
+.bt{
+    margin-top: 1rem;
+}
+.bt_save{
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 21px;
+    background-color: #007bff; 
+    color:white;
+}
+.bt_save:hover{
+    background-color: #439eff;
+}
