@@ -169,7 +169,7 @@ const HandelChange = (e, indice_ligne) => {
 // la fonction qui vas sauvgarder la resulta de la feullie dans la base de donne
   const HandelSave=(e)=>{
     e.preventDefault()
-   axios.post(process.env.BACKEND_URL+'/Result',{
+   axios.post('https://sever-side.onrender.com/Result',{
     id:props.id,
     T:somme[0].nbr,
     R:somme[1].nbr,

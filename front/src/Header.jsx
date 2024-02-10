@@ -16,7 +16,7 @@ const [DetailsEmployer,setDetailsEmployer]=useState([]);// state pour sauvgarder
 const Handelbt = (e) => {
   e.preventDefault();
   setSelectedEmployer(false);
-  axios.get(process.env.BACKEND_URL+'/employer')//get request
+  axios.get('https://sever-side.onrender.com/employer')//get request
   .then((res) => {
     console.log(res)
     setEmployer(res.data);
@@ -29,7 +29,7 @@ const Handelbt = (e) => {
  // dans le cas de choisir un employer parmi la liste des employer  pour choisir un employer specifique 
   const HandelEmployer=(id)=>{
     setSelectedEmployer(true)
-    axios.get(process.env.BACKEND_URL+`/employer/${id}`)
+    axios.get(`https://sever-side.onrender.com/employer/${id}`)
     .then(res=>{
       console.log(res)
     setDetailsEmployer(res.data)
