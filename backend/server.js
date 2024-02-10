@@ -11,7 +11,7 @@ app.use(cors());
 
 
 
-mongoose.connect("mongodb+srv://kazzedin29:kazzedin29@cluster0.xhxianp.mongodb.net/PetroMag?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://kazzedin29:kazzedin29@cluster0.xhxianp.mongodb.net/PetroMag?retryWrites=true&w=majority")
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -22,6 +22,7 @@ mongoose.connect("mongodb+srv://kazzedin29:kazzedin29@cluster0.xhxianp.mongodb.n
 mongoose.connection.on('error', (err) => {
   console.error('MongoDB connection error:', err);
 });
+
 
 
 app.get('/', (req, res) => {
