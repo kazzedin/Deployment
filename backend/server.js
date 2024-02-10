@@ -7,7 +7,11 @@ const { resModel } = require('./db/resultDb.js');
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:["https://deployment-server-side-g337o3oro-kazzedins-projects.vercel.app"],
+    methods:["GET", "POST"],
+    credentials:true,
+}));
 
 mongoose.connect(process.env.MONGO_URL) //PetroMag cest le nom de la base de donner
 
