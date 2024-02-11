@@ -115,7 +115,6 @@ const HandelChange = (e, indice_ligne) => {
   const col = [...colonesSupplementaires];
   const nvSomme = [...somme];
   const value = e.target.value;
-  let index;
 
   switch (value) {
       case 'T':
@@ -131,14 +130,15 @@ const HandelChange = (e, indice_ligne) => {
       case '9':
       case 'C':
       case "Cr":
-           index = col.findIndex(item => item.char === value);
+           const index = col.findIndex(item => item.char === value);
           col[index].valeur[indice_ligne].val++;
           break;
       case '':
           // Pour la ligne des mois
           col.forEach(item => {
-              if (item[index].valeur[indice_ligne].val > 0) {
-                  item[index].valeur[indice_ligne].val--;
+              if (item.valeur[indice_ligne].val > 0) {
+                  item.valeur[indice_ligne].val--;
+                  return;
               }
           });
 
