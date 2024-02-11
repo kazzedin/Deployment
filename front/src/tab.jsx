@@ -107,7 +107,7 @@ export default function Tab(props) {
       setInputs(values=>({...values,[name]:value}))
    }
 
-
+const [lettre,setLettre]=useState('')
 
 // la fonction qui vas changer les valuer des colonnes supplimentaire dans le tableau (incrementer , decrementer)
 const HandelChange = (e, indice_ligne) => {
@@ -115,7 +115,6 @@ const HandelChange = (e, indice_ligne) => {
   const col = [...colonesSupplementaires];
   const nvSomme = [...somme];
   const value = e.target.value;
-  let lettre;
 
   switch (value) {
       case 'T':
@@ -131,22 +130,27 @@ const HandelChange = (e, indice_ligne) => {
       case '9':
       case 'C':
       case "Cr":
-           const index = col.findIndex(item => item.char === value);
-          col[index].valeur[indice_ligne].val++;
-          lettre=col[index].char
-          break;
-      case '':
-          // Pour la ligne des mois
-          col.forEach(item => {
-              if (item.valeur[indice_ligne].val > 0 && item.char===lettre) {
-                  item.valeur[indice_ligne].val--;
-                  return;
-              }
-          });
+
+        const index = col.findIndex(item => item.char === value);
+        col[index].valeur[indice_ligne].val++;
+        setLettre(prevLettres => [...prevLettres, col[index].char]);
+        break;
+    case '':
+      const lastLetter = lettre[lettre.length - 1];
+        if (lettre.length > 0) {
+            col.forEach(item => {
+                if (item.valeur[indice_ligne].val > 0 && item.char === lastLetter) {
+                    item.valeur[indice_ligne].val--;
+                    setLettre(prevLettres => prevLettres.slice(0, -1)); // Supprimer la dernière lettre de lettres
+                }
+            });
+            
+        }
+          
 
          
           nvSomme.forEach(item => {
-              if (item.nbr > 0) {
+              if (item.nbr > 0 && item.lettre==lastLetter) {
                   item.nbr--;
               }
           });
