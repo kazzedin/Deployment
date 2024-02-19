@@ -233,7 +233,7 @@ const HandelChange = (e, indice_ligne) => {
         </thead>
         <tbody>
           {mois.map((m, indice_ligne) => (
-            <tr key={indice_ligne + 1}>
+            <tr key={indice_ligne}>
 
               <td>{m.nom}</td>
               {[...Array(m.jours).keys()].map((day, indice_colonne) => (
