@@ -234,15 +234,18 @@ const HandelChange = (e, indice_ligne) => {
         <tbody>
           {mois.map((m, indice_ligne) => (
             <tr key={indice_ligne + 1}>
+
               <td>{m.nom}</td>
               {[...Array(m.jours).keys()].map((day, indice_colonne) => (
                 <td key={indice_colonne + 1}>
                   <input
                     type="text"
                     className='inptab'
-                    onChange={(e) => HandelChange(e, indice_ligne)}
+                    onChange={(e) => HandelChange(e, indice_ligne)
+                  }
                   />
                 </td>
+
               ))}
               {colonesSupplementaires.map((col, index) => (
                 <td key={index}>
