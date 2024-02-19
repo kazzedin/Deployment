@@ -53,7 +53,6 @@ const Handelbt = (e) => {
                     <div className='selected_emp' key={id} onClick={()=>HandelEmployer(employer._id)} >
                         <p>Nom:{employer.nom}</p>
                         <p>Prenom:{employer.prenom}</p>
-                        <p>fonction:{employer.fonction}</p>
                         <br />
                     </div>  
                 ))
